@@ -1,0 +1,94 @@
+{
+	"info": {
+		"_postman_id": "00feeb20-8f87-4ceb-9aec-2cc5e172c24e",
+		"name": "MP3PY",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "get playlist",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/playlist/PLYSov4w3uC_H_bVdV5ODrtcrYi-2DSo9K",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"playlist",
+						"PLYSov4w3uC_H_bVdV5ODrtcrYi-2DSo9K"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "post download",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"url_list\": [\n    \"https://www.youtube.com/watch?v=7zbNK3sp7Dw\"\n  ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/download",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"download"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get download",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/download/f3e235c9-4c9a-46b5-b4fb-c25e4f899af6",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"download",
+						"f3e235c9-4c9a-46b5-b4fb-c25e4f899af6"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

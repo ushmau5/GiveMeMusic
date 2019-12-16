@@ -1,0 +1,10 @@
+version: "3"
+services:
+  flask:
+    build: ./flask
+    ports:
+      - "5000:5000"
+  react:
+    build: ./react
+    ports:
+      - "3000:3000"

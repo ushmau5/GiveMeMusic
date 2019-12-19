@@ -9,6 +9,8 @@ import DownloadButton from './components/DownloadButton';
 
 import STATUS from './status';
 
+const ENDPOINT = "http://localhost:5000"
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -35,7 +37,7 @@ class App extends React.Component {
   getSearchResults() {
     let playlistId = this.state.searchField.split('=')[1];
     this.setState({ status: STATUS.SEARCHING});
-    fetch(`http://localhost:5000/playlist/${playlistId}`)
+    fetch(`${ENDPOINT}/playlist/${playlistId}`)
     .then(response => response.json())
     .then(jsonData => this.setState({ status: STATUS.READY_TO_CONVERT, searchResults: jsonData }))
     .catch((error) => {
@@ -51,7 +53,7 @@ class App extends React.Component {
   postDownload() {
     let url_list = this.state.selectedResults.map(selectedVideoIndex => this.state.searchResults[selectedVideoIndex].url)
     this.setState({ status: STATUS.CONVERTING })
-    fetch('http://localhost:5000/download', {
+    fetch(`${ENDPOINT}/download`, {
       method: 'post',
       headers: {'Content-Type':'application/json'},
       body: JSON.stringify({
@@ -67,7 +69,7 @@ class App extends React.Component {
   }
 
   getDownload() {
-    fetch(`http://localhost:5000/download/${this.state.downloadId}`)
+    fetch(`${ENDPOINT}/download/${this.state.downloadId}`)
     .then(response => response.blob())
     .then(blob => {
       const url = window.URL.createObjectURL(blob);

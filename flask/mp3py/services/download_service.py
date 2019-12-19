@@ -17,7 +17,8 @@ class DownloadService:
             'outtmpl': f'{self.tmp_path}/%(title)s.%(ext)s',
             'ignoreerrors': True,
             'nooverwrites': True,
-            'geo_bypass': True
+            'geo_bypass': True,
+            'source_address': '0.0.0.0'
         }
 
         with youtube_dl.YoutubeDL(ydl_opts) as ydl:

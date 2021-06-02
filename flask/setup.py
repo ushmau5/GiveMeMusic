@@ -30,7 +30,7 @@ setup(
         'requests==2.22.0',
         'six==1.13.0',
         'soupsieve==1.9.5',
-        'urllib3==1.25.7',
+        'urllib3==1.26.5',
         'Werkzeug==0.16.0',
         'youtube-dl==2019.11.5',
         'zipp==0.6.0'
